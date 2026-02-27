@@ -271,8 +271,8 @@ pub struct PageProps {
     pub children: Children,
 }
 
-#[function_component(AppPage)]
-fn page(props: &PageProps) -> Html {
+#[component]
+fn AppPage(props: &PageProps) -> Html {
     let sidebar = html_nested! {
         <PageSidebar>
             <Nav>
@@ -566,27 +566,33 @@ fn page(props: &PageProps) -> Html {
                     variant={GroupVariant::IconButton}
                 >
                     <ToolbarItem>
-                        <patternfly_yew::prelude::Switch
-                            checked={*darkmode}
-                            onchange={onthemeswitch}
-                            label="Dark Theme"
-                        />
+                        <Bullseye>
+                            <patternfly_yew::prelude::Switch
+                                checked={*darkmode}
+                                onchange={onthemeswitch}
+                                label="Dark Theme"
+                            />
+                        </Bullseye>
                     </ToolbarItem>
                     <ToolbarItem>
-                        <Button
-                            variant={ButtonVariant::Plain}
-                            icon={Icon::Github}
-                            onclick={callback_github}
-                        />
+                        <Bullseye>
+                            <Button
+                                variant={ButtonVariant::Plain}
+                                icon={Icon::Github}
+                                onclick={callback_github}
+                            />
+                        </Bullseye>
                     </ToolbarItem>
                     <ToolbarItem>
-                        <Dropdown
-                            position={Position::Right}
-                            icon={Icon::QuestionCircle}
-                            variant={MenuToggleVariant::Plain}
-                        >
-                            <MenuAction onclick={onabout}>{ "About" }</MenuAction>
-                        </Dropdown>
+                        <Bullseye>
+                            <Dropdown
+                                position={Position::Right}
+                                icon={Icon::QuestionCircle}
+                                variant={MenuToggleVariant::Plain}
+                            >
+                                <MenuAction onclick={onabout}>{ "About" }</MenuAction>
+                            </Dropdown>
+                        </Bullseye>
                     </ToolbarItem>
                 </ToolbarGroup>
             </ToolbarContent>

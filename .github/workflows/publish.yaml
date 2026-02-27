@@ -54,7 +54,7 @@ jobs:
       - name: Build page
         env:
           BUILD_COMMIT: ${{ github.sha }}
-        run: trunk build --public-url /patternfly-yew-quickstart
+        run: trunk build
 
       - name: Create 404.html
         run: |

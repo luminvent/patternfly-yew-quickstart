@@ -22,7 +22,7 @@ wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"
 wasm-logger = "0.2"
 yew = { version = "0.22", features = ["csr"] }
-yew-hooks = "0.4"
+yew-hooks = "0.5"
 yew-more-hooks = { version = "0.4", features = ["yew-hooks"] }
 yew-nested-router = "0.8"
 
